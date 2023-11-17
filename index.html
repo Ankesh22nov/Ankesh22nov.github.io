@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>friendship calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            color: rgb(15, 1, 1);
+        }
+
+        body {
+            /* background-image: url(e.jpg); */
+            background-repeat: no-repeat;
+            animation: bganimation 15s linear infinite;
+        }
+
+        @keyframes bganimation {
+            0% {
+                background-color: rgba(61, 196, 196, 0.719);
+            }
+
+            20% {
+                background-color: rgba(192, 143, 145, 0.63);
+            }
+
+            40% {
+                background-color: rgba(189, 155, 45, 0.534);
+            }
+
+            60% {
+                background-color: rgba(90, 185, 126, 0.644);
+            }
+
+            80% {
+                background-color: rgba(175, 131, 150, 0.747);
+            }
+
+            100% {
+                background-color: rgba(61, 196, 196, 0.664);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 10vh;
+            top: 12vh;
+            position: relative;
+        }
+
+        .name {
+            width: 40vh;
+            padding: 2vh;
+            margin: 2%;
+            text-align: center;
+            background-color: rgb(75, 52, 52);
+            color: white;
+        }
+
+        .div {
+            text-align: center;
+
+        }
+
+        #parcent {
+            padding: 1%;
+            margin: 5px;
+            height: 10vh;
+            width: 35vw;
+            background-color: rgb(75, 52, 52);
+            color: white;
+        }
+
+        .innerdiv {
+            top: 40vh;
+            left: 8vw;
+            text-align: center;
+            height: 50vh;
+            width: 82vw;
+            display: block;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>friendship calculator </h1>
+    <div class="div">
+        <div class="innerdiv">
+            <input type="text" name="yourname" placeholder="enter your name" id="yname" class="name">
+            <input type="text" name="friendname" placeholder="enter your friend name" id="fname" class="name"><br>
+            <input type="button" value="parcentage" id="parcent" onclick="checkfrndpercent()">
+            <p>"god bless your friendship :)"</p>
+        </div>
+    </div>
+
+</body>
+<script>
+    function checkfrndpercent() {
+        var name = document.getElementById('yname').value;
+        var fname = document.getElementById('fname').value;
+
+        if (name == "") {
+            alert('enter your name first');
+        } else if (name.length <= 2) {
+            alert('your name should be more than 2 letters');
+        } else if (!isNaN(name)) {
+            alert('numbers are not allowed');
+        } else if (fname == "") {
+            alert('enter your friend name first');
+        } else if (fname.length <= 2) {
+            alert('your friend name should be more than 2 letters');
+        } else if (!isNaN(fname)) {
+            alert('numbers are not allowed');
+        } else
+            var frndpercent = Math.random() * 100;
+        frndpercent = Math.floor(frndpercent);
+        document.getElementById('parcent').value = frndpercent;
+    }
+</script>
+
+</html>
